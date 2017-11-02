@@ -1,10 +1,13 @@
-brew 'python'
-brew 'python3'
-brew 'zplug'
-brew 'zsh'
-
-cask 'google-chrome'
-cask 'karabiner-elements'
-cask 'spectacle'
-cask 'spotify'
-cask 'visual-studio-code'
+tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "python"
+brew "python3"
+brew "zplug"
+brew "zsh"
+cask "dotnet"
+cask "google-chrome"
+cask "karabiner-elements"
+cask "spectacle"
+cask "spotify"
+cask "visual-studio-code"

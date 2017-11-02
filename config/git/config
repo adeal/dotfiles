@@ -1,0 +1,7 @@
+[user]
+	name = Austin Deal
+	email = dealaus@umich.edu
+[alias]
+	a = add
+	s = status
+	co = checkout
