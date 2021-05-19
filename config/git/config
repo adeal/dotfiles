@@ -1,7 +1,13 @@
 [user]
 	name = Austin Deal
-	email = dealaus@umich.edu
 [alias]
+	branch-name = rev-parse --abbrev-ref HEAD
+	last-commit = log -1 --pretty=%B
+
 	a = add
 	s = status
 	co = checkout
+	b = branch
+	unstage = reset HEAD --
+[core]
+	excludesfile = ~/.config/git/gitignore_global

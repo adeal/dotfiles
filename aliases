@@ -1,0 +1,9 @@
+#!/bin/bash
+
+alias brews='brew list -1'
+alias md='mkdir'
+alias ~='pushd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias dotfiles='pushd ~/dotfiles/'

@@ -1,6 +1,10 @@
 # Ask for the administrator password upfront
 sudo -v
 
+# Close any open System Preferences panes,
+# to prevent them from overriding any setting
+osascript -e 'tell application "System Preferences" to quit'
+
 # Increase bluetooth quality
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
