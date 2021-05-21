@@ -1,9 +1,10 @@
 # Ask for the administrator password upfront
 sudo -v
 
-# Close any open System Preferences panes,
+
+# Gracefully close any open System Preferences panes,
 # to prevent them from overriding any setting
-osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'quit app "System Preferences"'
 
 # Increase bluetooth quality
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
@@ -20,13 +21,10 @@ defaults write com.apple.sidebarlists systemitems -dict-add ShowHardDisks -bool 
 # Display battery percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
-# Remove the auto-hiding Dock delay
-defaults write com.apple.Dock autohide-delay -float 0
-
-# Automatically hide and show the Dock
+# Dock
+defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
-
-# Set the icon size of Dock items to 30 pixels
+defaults write com.apple.dock autohide-delay -float 0.5
 defaults write com.apple.dock tilesize -int 30
 
 # Finder: show hidden files by default
@@ -36,3 +34,20 @@ defaults write com.apple.Finder AppleShowAllFiles -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Override Hammerspoon config location from $HOME to $HOME/.config (XDG_CONFIG_HOME)
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+
+# Alternative:
+#osascript \
+#    -e 'set appsToRestart to {"Dock", "Finder"}'\
+#    -e 'repeat with appToRestart in appsToRestart'\
+#    -e      'quit app appToRestart'\
+#    -e 'end repeat'
+osascript<<END
+    set appsToRestart to {"Dock", "Finder"}
+    repeat with appToRestart in appsToRestart
+        quit app appToRestart
+    end repeat
+END
+

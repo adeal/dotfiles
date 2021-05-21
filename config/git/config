@@ -11,3 +11,9 @@
 	unstage = reset HEAD --
 [core]
 	excludesfile = ~/.config/git/gitignore_global
+[diff]
+	tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
