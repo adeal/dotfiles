@@ -23,12 +23,16 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 # Dock
 defaults write com.apple.dock orientation -string "left"
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0.5
+defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock tilesize -int 30
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0.1
+defaults write com.apple.dock autohide-time-modifier -float 0.1
 
-# Finder: show hidden files by default
+
+# Finder
 defaults write com.apple.Finder AppleShowAllFiles -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
