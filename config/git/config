@@ -8,7 +8,8 @@
 	s = status
 	co = checkout
 	b = branch
-	unstage = reset HEAD -- 
+	pushup = push -u origin HEAD
+	unstage = reset HEAD --
 
 	default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's|^refs/remotes/origin/||'"
 [core]
